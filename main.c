@@ -10,7 +10,7 @@ stack_t *head = NULL;
  *  Return: 0.
  */
 
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	if (argc != 2)
 	{
@@ -24,7 +24,7 @@ int main (int argc, char *argv[])
 /**
  * read_file - funtion the open file
  *
- * @filename: name of the file 
+ * @filename: name of the file
  *
  */
 
@@ -44,7 +44,7 @@ void read_file(const char *filename)
 	}
 	while (characters != EOF)
 	{
-		characters = getline(&buffer,&bufsize, fd);
+		characters = getline(&buffer, &bufsize, fd);
 		if (characters > 1)
 		{
 			buffer[characters - 1] = '\0';

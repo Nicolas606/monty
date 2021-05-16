@@ -12,15 +12,14 @@ void add(stack_t **head, unsigned int line)
 {
 	stack_t *copy = *head;
 
-	if ((*head)->next == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L %u: can't add, stack too short\n", line);
+		free_stack();
+		dprintf(STDERR_FILENO, "L %u: can't add, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
-	else
-	{
-		(*head) = (*head)->next;
-		(*head)->prev = NULL;
-		(*head)->n = (*head)->n + copy->n;
+	(*head) = (*head)->next;
+	(*head)->prev = NULL;
+	(*head)->n = (*head)->n + copy->n;
+	free(copy);
 	}
-}

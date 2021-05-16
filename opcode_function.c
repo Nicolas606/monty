@@ -32,7 +32,7 @@ void opcode_function(char *opcode, char *n, unsigned int line_n)
 	}
 	if (find != i)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", line_n, opcode);
+		dprintf(STDERR_FILENO, "L%d: unknown instruction %s\n", line_n, opcode);
 		exit(EXIT_FAILURE);
 	}
 	if (find == 0)

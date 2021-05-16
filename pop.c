@@ -14,16 +14,16 @@ void pop(stack_t **head, unsigned int line)
 
 	if (head == NULL || *head == NULL)
 	{
-		fprintf(stderr, "L %u: can't pop an empty stack\n", line);
+		free_stack();
+		dprintf(STDERR_FILENO, "L %u: can't pop an empty stack\n", line);
 		exit(EXIT_FAILURE);
 	}
 
 	if ((*head)->next != NULL)
 	{
-		copy = copy->next;
-		copy->prev = (*head)->prev;
-		(*head) = copy;
+		(*head) = (*head)->next;
+		(*head)->prev = copy->prev;
+		free(copy);
+		return;
 	}
-	else
-		exit(EXIT_SUCCESS);
 }

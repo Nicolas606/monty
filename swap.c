@@ -12,9 +12,9 @@ void swap(stack_t **head, unsigned int line)
 {
 	stack_t *copy = *head;
 
-	if ((*head)->next == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 	{
-		fprintf(stderr, "L %u: can't swap, stack too short\n", line);
+		dprintf(STDERR_FILENO, "L %u: can't swap, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 	else

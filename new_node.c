@@ -15,7 +15,7 @@ void new_node(char *n, int line_n)
 
 	if (!n)
 	{
-		fprintf(stderr, "L%d: usage: push integer\n", line_n);
+		dprintf(STDERR_FILENO, "L%d: usage: push integer\n", line_n);
 		exit(EXIT_FAILURE);
 	}
 
@@ -23,7 +23,7 @@ void new_node(char *n, int line_n)
 	{
 		if (isdigit(n[i]) == 0)
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_n);
+			dprintf(STDERR_FILENO, "L%d: usage: push integer\n", line_n);
 			exit(EXIT_FAILURE);
 		}
 		i++;
@@ -31,7 +31,7 @@ void new_node(char *n, int line_n)
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
-		fprintf(stderr, "Error: lista vacia\n");
+		dprintf(STDERR_FILENO, "Error: lista vacia\n");
 		exit(EXIT_FAILURE);
 	}
 	new->n = atoi(n);

@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 {
 	if (argc != 2)
 	{
-		fprintf(stderr, "USAGE: monty file\n");
+		dprintf(STDERR_FILENO, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	read_file(argv[1]);
@@ -35,11 +35,10 @@ void read_file(const char *filename)
 	size_t bufsize = 0;
 	int characters = 0;
 	FILE *fd;
-
 	fd = fopen(filename, "r");
 	if (fd == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", filename);
 		exit(EXIT_FAILURE);
 	}
 	while (characters != EOF)
@@ -57,4 +56,5 @@ void read_file(const char *filename)
 		}
 	}
 	fclose(fd);
+	free(buffer);
 }

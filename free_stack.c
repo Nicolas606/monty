@@ -8,7 +8,13 @@
  *
  */
 
-void nop(stack_t **head, unsigned int line)
+void free_stack(void)
 {
-	(void)head, (void)line;
+	stack_t *copy = head;
+
+	while (head)
+	{
+		head = head->next;
+		free(copy);
+	}
 }

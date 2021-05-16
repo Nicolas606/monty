@@ -10,10 +10,7 @@
 
 void push(stack_t **head, unsigned int line)
 {
-	if (head && line)
-	{
-		;
-	}
+	(void)head, (void)line;
 }
 
 /**
@@ -32,13 +29,13 @@ void pall(stack_t **head, unsigned int line)
 
 	if (head == NULL || *head == NULL)
 	{
+		free_stack();
 		exit(EXIT_SUCCESS);
 	}
 
 	while (copy)
 	{
-		printf("%u\n", copy->n);
+		printf("%d\n", copy->n);
 		copy = copy->next;
 	}
-
 }

@@ -16,7 +16,7 @@ void sub(stack_t **head, unsigned int line)
 	if (*head == NULL || (*head)->next == NULL)
 	{
 		free_stack();
-		dprintf(STDERR_FILENO, "L %u: can't sub, stack too short\n", line);
+		dprintf(STDERR_FILENO, "L%u: can't sub, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 	(*head) = (*head)->next;

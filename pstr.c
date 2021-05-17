@@ -14,8 +14,6 @@ void pstr(stack_t **head, unsigned int line)
 	stack_t *copy = *head;
 	(void)line;
 
-	if (head == NULL || (*head) == NULL)
-		printf("\n");
 	while (copy != NULL)
 	{
 		if (copy->n <= 0 || copy->n > 127)

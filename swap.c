@@ -11,18 +11,18 @@
 void swap(stack_t **head, unsigned int line)
 {
 	stack_t *copy = *head;
+	int i;
 
 	if (*head == NULL || (*head)->next == NULL)
 	{
-		dprintf(STDERR_FILENO, "L %u: can't swap, stack too short\n", line);
+		dprintf(STDERR_FILENO, "L%u: can't swap, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 	else
 	{
-		(*head) = copy->next;
-		(*head)->prev = copy->prev;
-		copy->next = (*head)->next;
-		(*head)->next = copy;
-		copy->prev = (*head);
+		copy = (*head)->next;
+		i = (*head)->n;
+		(*head)->n = copy->n;
+		copy->n = i;
 	}
 }

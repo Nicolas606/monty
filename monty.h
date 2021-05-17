@@ -72,4 +72,6 @@ void divided(stack_t **head, unsigned int line);
 
 void mod(stack_t **head, unsigned int line);
 
+void pchar(stack_t **head, unsigned int line);
+
 #endif

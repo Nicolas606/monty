@@ -28,10 +28,7 @@ void pall(stack_t **head, unsigned int line)
 	(void)line;
 
 	if (head == NULL || *head == NULL)
-	{
-		free_stack();
-		exit(EXIT_SUCCESS);
-	}
+		return;
 
 	while (copy)
 	{

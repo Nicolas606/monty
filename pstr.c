@@ -13,30 +13,17 @@ void pstr(stack_t **head, unsigned int line)
 {
 	stack_t *copy = *head;
 	(void)line;
+
 	if (head == NULL || (*head) == NULL)
-	{
-		free_stack();
 		printf("\n");
-		return;
-	}
-	while ((*head)->next != NULL)
+	while (copy != NULL)
 	{
-		if ((*head)->n < 32 || (*head)->n > 127)
+		if (copy->n <= 0 || copy->n > 127)
 		{
-			free_stack();
-			printf("\n");
-			exit(EXIT_FAILURE);
-		}
-		else if ((*head)->n == 0)
-		{
-			free_stack();
-			printf("\n");
-			exit(EXIT_SUCCESS);
+			break;
 		}
 		printf("%c", (*head)->n);
 		copy = copy->next;
-		*head = copy;
 	}
-	printf("%c\n", (*head)->n);
-	free_stack();
+	printf("\n");
 }

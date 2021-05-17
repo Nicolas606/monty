@@ -21,7 +21,7 @@ void divided(stack_t **head, unsigned int line)
 	}
 	if ((*head)->n == 0)
 	{
-		dprintf(STDERR_FILENO, "L %u: division by zero\n", line);
+		dprintf(STDERR_FILENO, "L%u: division by zero\n", line);
 		exit(EXIT_FAILURE);
 	}
 	(*head) = (*head)->next;

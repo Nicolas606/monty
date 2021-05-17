@@ -21,6 +21,9 @@ void opcode_function(char *opcode, char *n, unsigned int line_n)
 			{"swap", swap},
 			{"add", add},
 			{"nop", nop},
+			{"sub", sub},
+			{"div", divided},
+			{"mul", mul},
 			{NULL, NULL}};
 	for (i = 0; array[i].opcode; i++)
 	{
@@ -32,6 +35,7 @@ void opcode_function(char *opcode, char *n, unsigned int line_n)
 	}
 	if (find != i)
 	{
+		free_stack();
 		dprintf(STDERR_FILENO, "L%d: unknown instruction %s\n", line_n, opcode);
 		exit(EXIT_FAILURE);
 	}

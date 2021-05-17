@@ -3,16 +3,15 @@
 /**
  * free_stack - function free the stack.
  *
- * @head: number the stack
- * @line: number the line that execute program
- *
  */
 
 void free_stack(void)
 {
+	stack_t *copy;
 	while (head)
 	{
+		copy = head;
 		head = head->next;
-		free(head->prev);
+		free(copy);
 	}
 }

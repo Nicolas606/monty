@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 	read_file(argv[1]);
+	free_stack();
 	return (EXIT_SUCCESS);
 }
 
@@ -35,6 +36,7 @@ void read_file(const char *filename)
 	size_t bufsize = 0;
 	int characters = 0;
 	FILE *fd;
+
 	fd = fopen(filename, "r");
 	if (fd == NULL)
 	{
@@ -52,8 +54,8 @@ void read_file(const char *filename)
 				return;
 			number = strtok(NULL, " ");
 			opcode_function(opcode, number, line_number);
-			line_number++;
 		}
+		line_number++;
 	}
 	fclose(fd);
 	free(buffer);

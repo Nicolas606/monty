@@ -50,7 +50,7 @@ void read_file(const char *filename)
 		{
 			buffer[characters - 1] = '\0';
 			opcode = strtok(buffer, " ");
-			if (opcode == NULL)
+			if (opcode == NULL || opcode[0] == '#')
 				continue;
 			number = strtok(NULL, " ");
 			opcode_function(opcode, number, line_number);

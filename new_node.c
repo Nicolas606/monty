@@ -37,7 +37,7 @@ void new_node(char *n, unsigned int line_n)
 	if (new == NULL)
 	{
 		free_stack();
-		fprintf(stderr, "Error: malloc failed\n");
+		dprintf(STDERR_FILENO, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	new->n = atoi(n);

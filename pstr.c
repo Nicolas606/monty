@@ -22,7 +22,7 @@ void pstr(stack_t **head, unsigned int line)
 		{
 			break;
 		}
-		printf("%c", (*head)->n);
+		printf("%c", copy->n);
 		copy = copy->next;
 	}
 	printf("\n");

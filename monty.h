@@ -62,4 +62,12 @@ void nop(stack_t **head, unsigned int line);
 
 void free_stack(void);
 
+void sub(stack_t **head, unsigned int line);
+
+void add(stack_t **head, unsigned int line);
+
+void mul(stack_t **head, unsigned int line);
+
+void divided(stack_t **head, unsigned int line);
+
 #endif

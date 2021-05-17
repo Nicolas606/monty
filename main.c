@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
 void read_file(const char *filename)
 {
-	unsigned int line_number = 1;
+	unsigned int line_number = 0;
 	char *buffer = NULL, *opcode = NULL, *number = NULL;
 	size_t bufsize = 0;
 	int characters = 0;

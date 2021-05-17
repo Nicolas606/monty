@@ -46,6 +46,7 @@ void read_file(const char *filename)
 	while (characters != EOF)
 	{
 		characters = getline(&buffer, &bufsize, fd);
+		line_number++;
 		if (characters > 1)
 		{
 			buffer[characters - 1] = '\0';
@@ -55,7 +56,6 @@ void read_file(const char *filename)
 			number = strtok(NULL, " ");
 			opcode_function(opcode, number, line_number);
 		}
-		line_number++;
 	}
 	fclose(fd);
 	free(buffer);

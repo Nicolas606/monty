@@ -26,6 +26,7 @@ void opcode_function(char *opcode, char *n, unsigned int line_n)
 			{"mul", mul},
 			{"mod", mod},
 			{"pchar", pchar},
+			{"pstr", pstr},
 			{NULL, NULL}};
 	for (i = 0; array[i].opcode; i++)
 	{

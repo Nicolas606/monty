@@ -16,7 +16,7 @@ void divided(stack_t **head, unsigned int line)
 	if (*head == NULL || (*head)->next == NULL)
 	{
 		free_stack();
-		dprintf(STDERR_FILENO, "L %u: can't div, stack too short\n", line);
+		dprintf(STDERR_FILENO, "L%u: can't div, stack too short\n", line);
 		exit(EXIT_FAILURE);
 	}
 	if ((*head)->n == 0)

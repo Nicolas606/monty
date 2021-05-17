@@ -8,6 +8,7 @@
 void free_stack(void)
 {
 	stack_t *copy;
+
 	while (head)
 	{
 		copy = head;

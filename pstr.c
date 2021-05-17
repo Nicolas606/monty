@@ -15,6 +15,7 @@ void pstr(stack_t **head, unsigned int line)
 	(void)line;
 	if (head == NULL || (*head) == NULL)
 	{
+		free_stack();
 		printf("\n");
 		return;
 	}
@@ -28,6 +29,7 @@ void pstr(stack_t **head, unsigned int line)
 		}
 		else if ((*head)->n == 0)
 		{
+			free_stack();
 			printf("\n");
 			exit(EXIT_SUCCESS);
 		}
@@ -36,4 +38,5 @@ void pstr(stack_t **head, unsigned int line)
 		*head = copy;
 	}
 	printf("%c\n", (*head)->n);
+	free_stack();
 }

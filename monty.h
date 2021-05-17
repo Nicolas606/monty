@@ -42,7 +42,7 @@ extern stack_t *head;
 
 void opcode_function(char *opcode, char *n, unsigned int line_number);
 
-void new_node(char *n, int line_number);
+void new_node(char *n, unsigned int line_number);
 
 void read_file(const char *filename);
 

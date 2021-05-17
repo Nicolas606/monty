@@ -15,7 +15,7 @@ void pop(stack_t **head, unsigned int line)
 	if (head == NULL || *head == NULL)
 	{
 		free_stack();
-		dprintf(STDERR_FILENO, "L %u: can't pop an empty stack\n", line);
+		dprintf(STDERR_FILENO, "L%u: can't pop an empty stack\n", line);
 		exit(EXIT_FAILURE);
 	}
 
@@ -25,5 +25,10 @@ void pop(stack_t **head, unsigned int line)
 		(*head)->prev = copy->prev;
 		free(copy);
 		return;
+	}
+	else
+	{
+		free(*head);
+		*head = NULL;
 	}
 }

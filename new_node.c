@@ -8,7 +8,7 @@
  *
  */
 
-void new_node(char *n, int line_n)
+void new_node(char *n, unsigned int line_n)
 {
 	int i = 0;
 	stack_t *new;
@@ -16,7 +16,7 @@ void new_node(char *n, int line_n)
 	if (!n)
 	{
 		free_stack();
-		dprintf(STDERR_FILENO, "L%d: usage: push integer\n", line_n);
+		dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_n);
 		exit(EXIT_FAILURE);
 	}
 
@@ -28,7 +28,7 @@ void new_node(char *n, int line_n)
 		if (isdigit(n[i]) == 0)
 		{
 			free_stack();
-			dprintf(STDERR_FILENO, "L%d: usage: push integer\n", line_n);
+			dprintf(STDERR_FILENO, "L%u: usage: push integer\n", line_n);
 			exit(EXIT_FAILURE);
 		}
 		i++;
